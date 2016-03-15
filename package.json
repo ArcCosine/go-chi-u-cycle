@@ -1,0 +1,15 @@
+{
+  "name": "go-chi-u-cycle",
+  "version": "1.0.0",
+  "description": "go-chi-u-cycle Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arc Cosine",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1"
+  }
+}
