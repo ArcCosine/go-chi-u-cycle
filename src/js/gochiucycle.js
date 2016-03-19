@@ -20,8 +20,6 @@
   GochiuCycle.prototype.renderCount = GCRenderCount;
   GochiuCycle.prototype.shareEvent = GCShareEvent;
   GochiuCycle.prototype.isMobile = GCIsMobile;
-
-
   // Initialize
   function GCInit() {
       this.position = 0;
