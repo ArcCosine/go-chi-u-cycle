@@ -10,7 +10,6 @@
   }
   GochiuCycle.prototype.init = GCInit;
   GochiuCycle.prototype.load = GCLoad;
-  GochiuCycle.prototype.loadEnd = GCLoadEnd;
   GochiuCycle.prototype.render = GCRender;
   GochiuCycle.prototype.bindEvent = GCBindEvent;
   GochiuCycle.prototype.calcPos = GCCalcPos;
@@ -30,25 +29,16 @@
 
   // load config
   function GCLoad() {
-      var _self = this;
-      var xhr = new XMLHttpRequest();
-      xhr.addEventListener("readystatechange", function(){ _self.loadEnd(this) }, false );
-      xhr.open("GET","./js/config.json", true);
-      xhr.responseType = "json";
-      xhr.send(null);
-  }
-
-  // load end
-  function GCLoadEnd(xhrObj) {
-      if( xhrObj.readyState === 4 && xhrObj.status === 200 && xhrObj.response ){
-          this.data = xhrObj.response;
+      fetch('js/config.json').then(res=>{
+          return res.json();
+      }).then(json=>{
+          this.data = json;
           this.render();
-      }
+      });
   }
 
   // render datas
   function GCRender() {
-      var _self = this;
       var title = document.getElementById("title");
       title.textContent = this.data.title;
 
@@ -57,7 +47,7 @@
       var shareLink = share.appendChild(document.createElement("a"));
       shareLink.href = "#";
       shareLink.textContent = this.data.share;
-      shareLink.addEventListener("click", function(eve){ _self.shareEvent(eve) }, false );
+      shareLink.addEventListener("click", (eve)=>{ this.shareEvent(eve) }, false );
 
       var rotate = document.getElementById("control-rotate");
       rotate.value = this.data.rotate;
@@ -80,7 +70,6 @@
                 this.div.style.backgroundImage = "url(" + this.imgpath + ")";
               },
               imgpath: icon,
-              //img: img,
               div: div
           };
           img.addEventListener("load", handleObj , false );
@@ -90,19 +79,18 @@
   }
 
   function GCBindEvent(){
-     var _self = this;
      var rotate = document.getElementById("control-rotate");
      var inverserotate = document.getElementById("control-inverserotate");
      if( this.isMobile ){
-        rotate.addEventListener("touchstart", function(eve){ _self.rotate(eve) }, false );
-        inverserotate.addEventListener("touchstart", function(eve){ _self.inverserotate(eve) }, false );
+        rotate.addEventListener("touchstart", (eve)=>{ this.rotate(eve) }, false );
+        inverserotate.addEventListener("touchstart", (eve) => { this.inverserotate(eve) }, false );
      }
-     rotate.addEventListener("click", function(eve){ _self.rotate(eve) }, false );
-     inverserotate.addEventListener("click", function(eve){ _self.inverserotate(eve) }, false );
+     rotate.addEventListener("click", (eve)=>{ this.rotate(eve) }, false );
+     inverserotate.addEventListener("click", (eve)=>{ this.inverserotate(eve) }, false );
 
 
-     window.addEventListener("mousewheel", function(eve){ _self.wheel(eve) }, false );
-     window.addEventListener("resize", function(eve){ _self.calcPos() }, false );
+     window.addEventListener("mousewheel", (eve)=>{ this.wheel(eve) }, false );
+     window.addEventListener("resize", (eve)=>{ this.calcPos() }, false );
 
   }
 
