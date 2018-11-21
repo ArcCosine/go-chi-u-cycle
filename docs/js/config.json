@@ -1,0 +1,17 @@
+{
+    "title" : "ごちうサイクル - ご注文はサイクルですか？ -",
+    "message" : "#{counter}回　回転させました",
+    "share" : "サイクル数をツイートする",
+    "rotate" : "回転",
+    "inverserotate" : "逆回転",
+    "icons" : [
+        "./image/cocoa.jpg",
+        "./image/chino.jpg",
+        "./image/rize.jpg",
+        "./image/syaro.jpg",
+        "./image/chiya.jpg",
+        "./image/cocoa_anime.jpg",
+        "./image/chino_anime.jpg",
+        "./image/rize_anime.jpg"
+    ]
+}

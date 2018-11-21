@@ -18,4 +18,8 @@ gulp.task("browserSyncTask", function () {
     });
 });
 
+gulp.task("release", function () {
+    return gulp.src(['src/*.html', 'src/css/**', 'src/js/**','src/image/**'],{base: 'src'})
+    .pipe(gulp.dest('docs'));
+});
 gulp.task("default",["browserSyncTask"]);
