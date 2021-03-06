@@ -2,18 +2,17 @@
 import "../scss/gochiucycle.scss";
 
 // import other
-import loadJson from "./loadJson";
 import renderCycle from "./renderCycle";
 import bindEvent from "./bindEvent";
 import calcPos from "./calcPos";
+import * as config from "./config.json";
 
 const init = async ()=>{
-    const json = await loadJson();
 
     // init global
     window.__gochi_u_cycle = 0;
 
-    renderCycle(json);
+    renderCycle(config);
     bindEvent();
     calcPos(0);
 };
