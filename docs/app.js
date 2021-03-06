@@ -146,7 +146,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst shareEvent = (eve)=>{\n      eve.preventDefault();\n      const link = `https://twitter.com/intent/tweet?text=${encodeURIComponent(document.getElementById(\"result\").textContent)} - ${document.title} ${window.location.href}`;\n      window.open(link);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (shareEvent);\n\n\n//# sourceURL=webpack://go-chi-u-cycle/./src/js/shareEvent.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst shareEvent = (eve)=>{\n      eve.preventDefault();\n      const link = `https://twitter.com/intent/tweet?text=${encodeURIComponent(document.getElementById(\"result-wrapper\").textContent)} - ${document.title} ${window.location.href}`;\n      window.open(link);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (shareEvent);\n\n\n//# sourceURL=webpack://go-chi-u-cycle/./src/js/shareEvent.js?");
 
 /***/ }),
 
