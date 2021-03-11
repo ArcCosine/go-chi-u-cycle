@@ -9,6 +9,7 @@ html, body, section, div, input, p, h1 {
 }
 
 html, body {
+  position: relative;
   height: 100%;
 }
 
@@ -79,17 +80,20 @@ div#share a {
 
 section.render-area {
   width: 100%;
-  position: relative;
+  // position: relative;
 }
+
+// div#cycle-area {
+//     clear: both;
+// }
 
 div.cycle-icon {
   display: block;
   width: 80px;
-  padding-top: 80px;
+  height: 80px;
   margin: 0px;
   background-size: contain;
   background-repeat: no-repeat;
-  transition: transform 0.1s ease-in-out;
   position: absolute;
 }
 

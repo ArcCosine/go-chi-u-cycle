@@ -38,10 +38,6 @@ const config = {
                     from: "./src/image",
                     to: "./image"
                 },
-                {
-                    from: "./src/js/config.json",
-                    to: "./js",
-                },
             ],
         }),
         new HtmlWebpackPlugin({
