@@ -1,30 +1,37 @@
 @charset "UTF-8";
 
-html, body, section, div, input, p, h1 {
-  margin: 0px;
-  padding: 0px;
-  font-size: 14px;
-  border: none;
-  line-height: 1;
+html,
+body,
+section,
+div,
+input,
+p,
+h1 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+    border: none;
+    line-height: 1;
 }
 
-html, body {
-  position: relative;
-  height: 100%;
+html,
+body {
+    position: relative;
+    height: 100%;
 }
 
 h1 {
-  color: #C7A666;
-  font-size: 36px;
-  line-height: 36px;
-  text-align: center;
-  padding: 18px;
+    color: #c7a666;
+    font-size: 36px;
+    line-height: 36px;
+    text-align: center;
+    padding: 18px;
 }
 
-input[type=button] {
+input[type="button"] {
     color: #fff;
-    background-color: #B5001F;
-    border-color: #B5001F;
+    background-color: #b5001f;
+    border-color: #b5001f;
 
     display: inline-block;
     padding: 6px 12px;
@@ -48,65 +55,64 @@ input[type=button] {
 }
 
 div.contents {
-  height: 100%;
+    height: 100%;
 }
 
 div#result-wrapper {
-  width: 50%;
-  margin: 0px auto;
-  text-align: center;
-  font-size: 18px;
-  padding: 9px 0px;
+    width: 50%;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 18px;
+    padding: 9px 0px;
 }
 
 div#control-button {
-  width: 50%;
-  margin: 0px auto;
-  text-align: center;
-  padding: 18px 0px;
+    width: 50%;
+    margin: 0px auto;
+    text-align: center;
+    padding: 18px 0px;
 }
 
 div#share {
-  width: 50%;
-  margin: 0px auto;
-  text-align: center;
-  padding: 18px 0px;
+    width: 50%;
+    margin: 0px auto;
+    text-align: center;
+    padding: 18px 0px;
 }
 
-
 div#share a {
-  color : #0088cc;
+    color: #0088cc;
 }
 
 section.render-area {
-  width: 100%;
-  // position: relative;
+    width: 100%;
+    // position: relative;
 }
 
+
 // div#cycle-area {
-//     clear: both;
 // }
 
 div.cycle-icon {
-  display: block;
-  width: 80px;
-  height: 80px;
-  margin: 0px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
 }
 
 @media screen and (max-width: 320px) {
-  div.cycle-icon {
-  width: 20%;
-  padding-top: 20%;
-  }
+    div.cycle-icon {
+        width: 20%;
+        padding-top: 20%;
+    }
 }
 
 section.footer-area {
-  position: fixed;
-  bottom: 0px;
-  padding: 14px;
-  text-align: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 14px;
+    text-align: center;
 }

@@ -18,6 +18,7 @@ const bindEvent = () => {
 
     window.addEventListener("mousewheel", wheel, false);
     window.addEventListener("resize", calcPos.bind(null,0), false);
+
 };
 
 export default bindEvent;

@@ -1,4 +1,4 @@
-const renderImage = (icon,div,eve)=>{
+const renderImage = (icon: String, div: HTMLElement, eve:Event )=>{
     div.style.backgroundImage  = `url('${icon}')`;
 };
 

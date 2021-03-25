@@ -29,14 +29,37 @@ const renderCycle = () => {
         img.addEventListener(
             "load",
             {
-                handleEvent: (eve) => {
-                    eve.preventDefault();
+                handleEvent: () => {
                     div.style.backgroundImage = `url('${icon}')`;
                 },
             },
             false
         );
     });
+
+    const cycleIcons = document.querySelectorAll(".cycle-icon");
+
+    const offset = document.querySelector(".control-area").clientHeight;
+    const geta = cycleIcons[0].clientHeight;
+
+    const r = (document.body.clientHeight - offset - geta) / 2;
+    const x = (document.body.clientWidth - geta) / 2;
+    const y = r;
+
+    const limit = cycleIcons.length;
+
+
+    for (let i = 0; i < limit; i++) {
+        const theta = (2 * Math.PI * i) / limit;
+        const x1 = x + r * Math.cos(theta);
+        const y1 = y + r * Math.sin(theta);
+        const cycleIcon = <HTMLElement>cycleIcons[i];
+        cycleIcon.style.transform = `translate3d(${x1}px,${y1}px,0px)`;
+    }
+
+    // const renderArea = <HTMLElement>document.querySelector('.render-area');
+    // renderArea.style.height = (document.body.clientHeight - offset) + 'px';
+
 };
 
 export default renderCycle;

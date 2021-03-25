@@ -1,6 +1,6 @@
 import calcPos from "./calcPos";
 
-const inverseRotateCycle =(eve)=>{
+const inverseRotateCycle = (eve: Event)=>{
       eve.preventDefault();
       calcPos(-1);
 };
