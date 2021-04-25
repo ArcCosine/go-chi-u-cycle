@@ -5,7 +5,7 @@ const path = require("path");
 const config = {
     mode: "development",
     entry: {
-        app: "./src/js/gochiucycle.js",
+        app: "./src/ts/gochiucycle.ts",
     },
     output: {
         path: path.resolve(__dirname + "/dist"),
@@ -13,6 +13,14 @@ const config = {
     },
     module: {
         rules: [
+            {
+                test: /\.tsx?$/,
+                use: "ts-loader",
+                exclude: [
+                    /node_modules/,
+                    /dist/
+                ]
+            },
             {
                 test: /\.scss/,
                 use: [
@@ -31,16 +39,15 @@ const config = {
             }
         ]
     },
+    resolve: {
+        extensions: ['.tsx','.ts','.js']
+    },
     plugins: [
         new CopyWebpackPlugin({
             patterns: [
                 {
                     from: "./src/image",
                     to: "./image"
-                },
-                {
-                    from: "./src/js/config.json",
-                    to: "./js",
                 },
             ],
         }),
