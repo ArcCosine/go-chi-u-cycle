@@ -1,0 +1,18 @@
+// Vitest Snapshot v1
+
+exports[`Rotate button test > button render test 1`] = `
+<div>
+  <div>
+    <button
+      type="button"
+    >
+      回転
+    </button>
+    <button
+      type="button"
+    >
+      逆回転
+    </button>
+  </div>
+</div>
+`;
