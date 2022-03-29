@@ -17,8 +17,17 @@ function RotateButton() {
 
     return (
         <div>
-            <button type="button" onClick={countUp}>回転</button>
-            <button type="button" onClick={countDown}>逆回転</button>
+            <div className="Rotate-Button">
+                <button type="button" onClick={countUp}>
+                    回転
+                </button>
+                <button type="button" onClick={countDown}>
+                    逆回転
+                </button>
+            </div>
+            <div className="Rotate-Result">
+                <span id="counter">{counter}</span>回 回転させました。
+            </div>
         </div>
     );
 }

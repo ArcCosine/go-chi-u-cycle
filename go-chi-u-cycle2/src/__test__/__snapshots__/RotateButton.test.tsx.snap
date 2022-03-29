@@ -3,16 +3,26 @@
 exports[`Rotate button test > button render test 1`] = `
 <div>
   <div>
-    <button
-      type="button"
-    >
-      回転
-    </button>
-    <button
-      type="button"
-    >
-      逆回転
-    </button>
+    <div>
+      <button
+        type="button"
+      >
+        回転
+      </button>
+      <button
+        type="button"
+      >
+        逆回転
+      </button>
+    </div>
+    <div>
+      <span
+        id="counter"
+      >
+        0
+      </span>
+      回 回転させました。
+    </div>
   </div>
 </div>
 `;
