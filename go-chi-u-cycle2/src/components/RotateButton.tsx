@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function RotateButton() {
+const RotateButton = () => {
     const [counter, setCounter] = useState(0);
 
     const countUp = () => {
@@ -17,7 +17,7 @@ function RotateButton() {
 
     return (
         <div>
-            <div className="Rotate-Button">
+            <div className="RotateButton">
                 <button type="button" onClick={countUp}>
                     回転
                 </button>
@@ -25,10 +25,11 @@ function RotateButton() {
                     逆回転
                 </button>
             </div>
-            <div className="Rotate-Result">
-                <span id="counter">{counter}</span>回 回転させました。
+            <div className="RotateResult">
+                <span data-testid="countup">{counter}</span>回 回転させました。
             </div>
         </div>
     );
 }
+
 export default RotateButton;
