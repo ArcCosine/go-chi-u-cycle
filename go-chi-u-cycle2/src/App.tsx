@@ -1,5 +1,6 @@
 import './App.css'
 import RotateButton from "./components/RotateButton";
+import Cycle from "./components/Cycle";
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
         <p>ごちうサイクル - ご注文はサイクルですか？ -</p>
       </header>
       <RotateButton />
+      <Cycle />
     </div>
   )
 }
