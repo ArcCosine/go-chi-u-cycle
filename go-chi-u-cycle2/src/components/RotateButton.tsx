@@ -16,8 +16,8 @@ const RotateButton = () => {
     //}, []);
 
     return (
-        <div>
-            <div className="RotateButton">
+        <div className="rotate-container">
+            <div className="rotate-button">
                 <button type="button" onClick={countUp}>
                     回転
                 </button>
@@ -25,7 +25,7 @@ const RotateButton = () => {
                     逆回転
                 </button>
             </div>
-            <div className="RotateResult">
+            <div className="rotate-result">
                 <span data-testid="countup">{counter}</span>回 回転させました。
             </div>
         </div>
