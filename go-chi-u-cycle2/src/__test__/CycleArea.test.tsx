@@ -1,11 +1,11 @@
 import { describe, expect, test } from "vitest";
-import { render } from "@testing-@testing-library/react";
+import { render } from "@testing-library/react";
 
-import Cycle from "../components/Cycle";
+import CycleArea from "../components/CycleArea";
 
 describe("Cycle component test", ()=>{
     test("render test", ()=>{
-        const { container } = render(<Cycle />);
+        const { container } = render(<CycleArea />);
         expect(container).toMatchSnapshot();
     })
 });

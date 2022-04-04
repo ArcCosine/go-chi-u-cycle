@@ -1,4 +1,4 @@
-const Cycle = () => {
+const CycleArea = () => {
     const images = [
         {
             imageUrl: "chino.jpg",
@@ -62,17 +62,22 @@ const Cycle = () => {
         },
     ];
 
-    return 
-    (
-        <div>
-            {images.map((item) =>(
-                <img
-                    src={'image/' + item.imageUrl}
-                    alt={item.imageText}
-                />
-            ))}
+    return (
+        <div className="carousel-container">
+            <div className="carousel">
+                {images.map((item) => {
+                    return (
+                        <figure>
+                            <img
+                                src={"src/image/" + item.imageUrl}
+                                alt={item.imageText}
+                            />
+                        </figure>
+                    );
+                })}
+            </div>
         </div>
     );
 };
 
-export default Cycle;
+export default CycleArea;
