@@ -2,6 +2,7 @@ import { describe, expect, test } from "vitest";
 import { render } from "@testing-library/react";
 
 import CycleArea from "../components/CycleArea";
+import { CountProvider } from "../context/CountContext";
 
 describe("Cycle component test", ()=>{
     test("render test", ()=>{
@@ -15,7 +16,7 @@ describe("Cycle component test", ()=>{
                 imageText: "syaro",
             },
         ];
-        const { container } = render(<CycleArea images={images} />);
+        const { container } = render(<CountProvider><CycleArea images={images} /></CountProvider>);
         expect(container).toMatchSnapshot();
     })
 });

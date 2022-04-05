@@ -1,6 +1,7 @@
 import "./App.css";
 import RotateButton from "./components/RotateButton";
 import CycleArea from "./components/CycleArea";
+import { CountProvider } from "./context/CountContext";
 
 const images = [
     {
@@ -66,14 +67,60 @@ const images = [
 ];
 
 function App() {
-
     return (
         <div className="App">
             <header className="App-header">
-                <p>ごちうサイクル - ご注文はサイクルですか？ -</p>
+                <h1>ごちうサイクル - ご注文はサイクルですか？ -</h1>
             </header>
-            <RotateButton  />
-            <CycleArea images={images} />
+            <CountProvider>
+                <CycleArea images={images} />
+                <RotateButton length={images.length} />
+            </CountProvider>
+            <footer>
+                <div className="column-container">
+                    <div className="column">
+                        <h1>Special Thanks</h1>
+                        <ul>
+                            <li>
+                                
+                                <a href="https://gochiusa.com/bloom/">
+                                    ご注文はうさぎですか？
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://gochiusa.com/special/c00370000.html">
+                                    Twitterアイコン＆待ち受け配布
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/usagi_anime">
+                                    TVアニメ『ご注文はうさぎですか？』公式Twitter
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="column">
+                        <h1>Powerd By</h1>
+                        <ul>
+                            <li>
+                                <a href="https://vitejs.dev/">Vite</a>
+                            </li>
+                            <li>
+                                <a href="https://reactjs.org/">React</a>
+                            </li>
+                            <li>
+                                <a href="https://www.typescriptlang.org/">
+                                    TypeScript
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="copy-right">
+                    Since:2016-2022 ごちうサイクル - ご注文はサイクルですか？ -{" "}
+                    <a href="https://twitter.com/ArcCosine">&#64;ArcCosine</a>
+                </div>
+            </footer>
         </div>
     );
 }
