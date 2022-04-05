@@ -5,7 +5,17 @@ import CycleArea from "../components/CycleArea";
 
 describe("Cycle component test", ()=>{
     test("render test", ()=>{
-        const { container } = render(<CycleArea />);
+        const images = [
+            {
+                imageUrl: "syaro.jpg",
+                imageText: "syaro",
+            },
+            {
+                imageUrl: "syaro.png",
+                imageText: "syaro",
+            },
+        ];
+        const { container } = render(<CycleArea images={images} />);
         expect(container).toMatchSnapshot();
     })
 });
