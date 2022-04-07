@@ -6,11 +6,11 @@ export function useCountContext() {
   return useContext(CountContext);
 }
 
-export function CountProvider({ children:any }) {
-  const [counter:Number, setCounter] = useState(0);
+export function CountProvider({ children }) {
+    const [counter, setCounter] = useState<Number>(0);
 
   const value = {
-    counter:Number,
+    counter,
     setCounter,
   };
 

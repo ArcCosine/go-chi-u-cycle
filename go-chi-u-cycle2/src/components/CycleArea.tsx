@@ -1,17 +1,28 @@
 import { useCountContext } from "../context/CountContext";
 interface HTMLStyle {
-    [name: string] : string
+    [name: string]: string;
 }
 
-const CycleArea = ({ images }: {images:Array<{[key:string]:string}>}) => {
-    const { counter:Number, setCounter:Function } = useCountContext();
+interface ImageObject {
+    [imageUrl:string]: string;
+    [imageText:string]: string;
+}
+
+interface ImageProps {
+    [images:Array]: [
+        ImageObject
+    ];
+}
+
+const CycleArea: React.FC<ImageProps> = ({ images }) => {
+    const { counter, setCounter } = useCountContext();
 
     const zSize = 600;
     const r = 360 / images.length;
 
     const deg = counter * r;
 
-    const rotateStyle:HTMLStyle = {
+    const rotateStyle: HTMLStyle = {
         transform: "rotateY(" + deg + "deg)",
     };
 
@@ -21,29 +32,36 @@ const CycleArea = ({ images }: {images:Array<{[key:string]:string}>}) => {
     };
 
     let isTouch = false;
-    let startPos = 0, movePos = 0;
+    let startPos = 0,
+        movePos = 0;
     const handleTouch = (eve: TouchEvent) => {
-        switch(eve._reactName){
+        switch (eve._reactName) {
             case "onTouchStart":
                 isTouch = true;
                 startPos = eve.touches[0].clientX;
                 break;
             case "onTouchEnd":
                 isTouch = false;
-                setCounter(counter - Math.floor((startPos - movePos)/50));
+                setCounter(counter - Math.floor((startPos - movePos) / 50));
                 break;
             case "onTouchMove":
-                if( isTouch ){
+                if (isTouch) {
                     movePos = eve.touches[0].clientX;
                 }
                 break;
         }
-    }
+    };
 
     return (
-        <div className="carousel-container" onWheel={handleWheel} onTouchStart={handleTouch} onTouchMove={handleTouch} onTouchEnd={handleTouch}>
+        <div
+            className="carousel-container"
+            onWheel={handleWheel}
+            onTouchStart={handleTouch}
+            onTouchMove={handleTouch}
+            onTouchEnd={handleTouch}
+        >
             <div className="carousel" style={rotateStyle}>
-                {images.map((item, imageCounter) => {
+                {images.map((item:ImageObject, imageCounter:number) => {
                     const degSize = r * imageCounter;
                     const figureStyle = {
                         transform:
