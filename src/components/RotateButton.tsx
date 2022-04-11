@@ -1,11 +1,11 @@
 import { useCountContext } from "../context/CountContext";
 
 interface Props {
-    length: Number
+    length:number; 
 };
 
 const RotateButton:React.FC<Props> = ({length}) => {
-    const {counter, setCounter} = useCountContext();
+    const {counter, setCounter}:any = useCountContext();
 
     const countUp = () => {
         setCounter(counter + 1);

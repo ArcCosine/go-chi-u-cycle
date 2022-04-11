@@ -3,16 +3,7 @@ import RotateButton from "./components/RotateButton";
 import CycleArea from "./components/CycleArea";
 import { CountProvider } from "./context/CountContext";
 
-interface ImageProps {
-    images: [
-        {
-            [imageUrl:string]: string;
-            [imageText:string]: string;
-        }
-    ];
-}
-
-const images:ImageProps = [
+const images = [
     {
         imageUrl: "chino.jpg",
         imageText: "chino",

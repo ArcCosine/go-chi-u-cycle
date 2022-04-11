@@ -86,7 +86,7 @@ button {
 }
 
 footer h1 {
-  margin: 1.5em 0 0 0;
+  margin: 1.5em 0 .5em 0;
   padding: 0;
 
   color: #c7a666;
@@ -107,6 +107,17 @@ footer h1 {
   margin-left: 25%;
 }
 
+.rotate-tweet a {
+    display: inline-block;
+    text-decoration: none;
+    padding: .5em 1em;
+    border-radius: .5em;
+    background: #4caf50;
+    border: 1px solid #4caf50;
+    box-shadow: 1px 1px 1px rgb(0 0 0 / 50%);
+    color: #fff;
+}
+
 ul,
 li {
   list-style-type: none;
@@ -114,13 +125,22 @@ li {
   padding: 0;
 }
 
+li {
+  margin-bottom: 1em;
+}
+
 .copy-right {
   margin: 16px auto;
+  padding: 0px 16px;
 }
 
 @media screen and (max-width: 480px) {
+
+  .column-container {
+    flex-direction: column;
+  }
   .column-container .column {
-    width: 45%;
+    width: 90%;
     margin-left: 5%;
   }
   .column-container .column:first-child {

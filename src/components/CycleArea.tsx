@@ -1,21 +1,20 @@
+import React from "react";
 import { useCountContext } from "../context/CountContext";
 interface HTMLStyle {
     [name: string]: string;
 }
 
 interface ImageObject {
-    [imageUrl:string]: string;
-    [imageText:string]: string;
+    imageUrl: string;
+    imageText: string;
 }
 
-interface ImageProps {
-    [images:Array]: [
-        ImageObject
-    ];
+type Props = {
+    images: ImageObject[];
 }
 
-const CycleArea: React.FC<ImageProps> = ({ images }) => {
-    const { counter, setCounter } = useCountContext();
+const CycleArea:React.FC<Props> = ({ images }) => {
+    const { counter, setCounter }:any = useCountContext();
 
     const zSize = 600;
     const r = 360 / images.length;
@@ -26,7 +25,7 @@ const CycleArea: React.FC<ImageProps> = ({ images }) => {
         transform: "rotateY(" + deg + "deg)",
     };
 
-    const handleWheel = (eve: WheelEvent) => {
+    const handleWheel = (eve: any) => {
         const delta = -1 * Math.max(-1, Math.min(1, Math.floor(-eve.deltaY)));
         setCounter(counter + delta);
     };
@@ -34,8 +33,8 @@ const CycleArea: React.FC<ImageProps> = ({ images }) => {
     let isTouch = false;
     let startPos = 0,
         movePos = 0;
-    const handleTouch = (eve: TouchEvent) => {
-        switch (eve._reactName) {
+    const handleTouch = (eve: any) => {
+        switch (eve._reactName ) {
             case "onTouchStart":
                 isTouch = true;
                 startPos = eve.touches[0].clientX;
@@ -71,10 +70,11 @@ const CycleArea: React.FC<ImageProps> = ({ images }) => {
                             zSize +
                             "px)",
                     };
+                    const imagePath = `/${item.imageUrl}`;
                     return (
                         <figure key={imageCounter} style={figureStyle}>
                             <img
-                                src={"src/image/" + item.imageUrl}
+                                src={imagePath}
                                 alt={item.imageText}
                             />
                         </figure>
