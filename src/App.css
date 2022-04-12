@@ -55,6 +55,10 @@ button {
   margin: 16px auto;
 }
 
+.rotate-cheat {
+  margin: 16px auto;
+}
+
 .carousel-container {
   margin: 60px auto 0;
   perspective: 9000px;

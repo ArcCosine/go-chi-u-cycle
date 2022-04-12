@@ -70,7 +70,7 @@ const CycleArea:React.FC<Props> = ({ images }) => {
                             zSize +
                             "px)",
                     };
-                    const imagePath = `/go-chi-u-cycle/${item.imageUrl}`;
+                    const imagePath = `${item.imageUrl}`;
                     return (
                         <figure key={imageCounter} style={figureStyle}>
                             <img
