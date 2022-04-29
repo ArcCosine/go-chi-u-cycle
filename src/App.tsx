@@ -114,6 +114,12 @@ function App() {
                                 </a>
                             </li>
                         </ul>
+                        <h1>Source</h1>
+                        <ul>
+                            <li>
+                                <a href="https://github.com/ArcCosine/go-chi-u-cycle" target="_blank" rel="noopener">GitHub</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div className="copy-right">
