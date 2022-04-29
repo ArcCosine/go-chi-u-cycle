@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useCountContext } from "../context/CountContext";
 interface HTMLStyle {
     [name: string]: string;
@@ -25,7 +25,7 @@ const CycleArea:React.FC<Props> = ({ images }) => {
         transform: "rotateY(" + deg + "deg)",
     };
 
-    const handleWheel = (eve: WheelEvent<HTMLDivElement>) => {
+    const handleWheel = (eve: React.WheelEvent<HTMLDivElement>) => {
         const delta = -1 * Math.max(-1, Math.min(1, Math.floor(-eve.deltaY)));
         setCounter(counter + delta);
     };
@@ -33,7 +33,7 @@ const CycleArea:React.FC<Props> = ({ images }) => {
     let isTouch = false;
     let startPos = 0,
         movePos = 0;
-    const handleTouch = (eve: TouchEvent<HTMLDivElement>) => {
+    const handleTouch = (eve: React.TouchEvent<HTMLDivElement>) => {
         //console.log(eve);
         switch (eve.type) {
             case "touchstart":
